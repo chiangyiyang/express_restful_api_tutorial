@@ -73,6 +73,28 @@ app.delete('/posts/:id', (req, res) => {
     res.json(posts)
 })
 
+app.put('/posts/:id', (req, res) => {
+    posts = posts.map(e => {
+        if (e.id != req.params.id)
+            return e
+        else
+            return { id: e.id, ...req.body }
+    })
+
+    res.json(posts)
+})
+
+app.patch('/posts/:id', (req, res) => {
+    posts = posts.map(e => {
+        if (e.id != req.params.id)
+            return e
+        else
+            return { ...e, ...req.body }
+    })
+
+    res.json(posts)
+})
+
 
 
 app.listen(port, () => {
