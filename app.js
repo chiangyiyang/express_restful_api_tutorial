@@ -25,8 +25,19 @@ app.get('/', (req, res) => {
     res.json({ message: "Hello World!" })
 })
 
+app.post('/', function (req, res) {
+    res.send('Got a POST request');
+})
+
 app.get('/posts', (req, res) => {
     res.json(posts)
+})
+
+app.get('/posts/:id', (req, res) => {
+    // res.json(posts)
+
+    let result = posts.filter(e => e.id == req.params.id)
+    res.json(result)
 })
 
 app.listen(port, () => {

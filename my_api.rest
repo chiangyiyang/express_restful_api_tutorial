@@ -1,0 +1,13 @@
+### GET
+GET http://localhost:3000/ HTTP/1.1
+
+### POST 
+POST http://localhost:3000/ HTTP/1.1
+
+### GET posts
+GET http://localhost:3000/posts HTTP/1.1
+
+### GET posts id=1
+GET http://localhost:3000/posts/1 HTTP/1.1
+
+###
