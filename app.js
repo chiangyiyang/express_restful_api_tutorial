@@ -68,6 +68,13 @@ app.post('/posts', (req, res) => {
 });
 
 
+app.delete('/posts/:id', (req, res) => {
+    posts = posts.filter(e => e.id != req.params.id)
+    res.json(posts)
+})
+
+
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
